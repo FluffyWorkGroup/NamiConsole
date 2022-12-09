@@ -4,8 +4,9 @@
     "description": "A fork of captainJS",
     "main": "./src/index.js",
     "scripts": {
-        "test": "node ./test.js"
+        "test": "node ./tests/test.js"
     },
+    "typings": "./typings/index.d.ts",
     "keywords": [
         "debugger",
         "logger",
@@ -18,5 +19,8 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/sammwyy/captainjs.git"
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.12"
     }
 }

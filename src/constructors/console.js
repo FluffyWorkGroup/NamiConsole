@@ -1,3 +1,5 @@
+// @ts-check
+
 const MessageType = require('../enumerators/Types');
 const Color = require("../enumerators/Color");
 
