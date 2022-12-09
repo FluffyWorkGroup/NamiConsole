@@ -1,60 +1,72 @@
-<img align="left" src="https://raw.githubusercontent.com/sammwyy/captainjs/master/docs/assets/captain.png" width="10%">
 
-### Captain.js
-A toolkit for NodeJS which contains Debugger and Console Utilities.  
-<p align="center"> <a href="#debugger">Debugger</a> | <a href="#console">Console</a> | <a href="#colors">Colors</a> | <a href="#commands">Commands</a>
+<div align="center">
+<img src="https://i.imgur.com/VV8QbET.png" />
 
-#### What is Captain.js?
-Captain.js is a toolkit that provides console utilities such as debugging, logging, and commands.  
+Un fork de [captainjs](https://github.com/sammwyy/captainjs) con algunas mejoras personalizadas pensadas para todo el branding de Nami al igual que con el trabajo de typescript, como lo pueden ser el uso de ecmascript y la eliminación completa de commonjs como espacio de trabajo.
 
-### Console
-**Format console**  
-add formats to the console that apply automatic colors, prefixes and other utilities.
-```javascript
-const Captain = require('captainjs');
-console = new Captain.Console();
+</div>
 
-console.log("Hello");
-console.error("This is an error");
-console.warn("Warning! you are awesome.");
+---
+
+
+
+<br>
+
+#### ¿Qué es captain.js?
+Captain.js es una herramienta enfocada en brindar funcionalidades de la consola para Node.js, como lo son los colores, los prefijos, el debugger y los comandos.
+
+
+<br>
+
+### Funcionalidades de consola
+**Formateado de la consola:** Agrega formateado a la consolam dentro de las funciones de este paquete, como lo son los colores, los prefijos y el debugger.
+```typescript
+import { Console } from 'namiconsole';
+console = new Console();
+
+console.log("Esto es un log");
+console.error("Esto es un error");;
+console.warn("Esto es un advertencia por tu nivel de belleza");
 ```
+<br>
 
 > Output:  
-[23:57:44] [Log] Hello  
-[23:57:44] [Error] This is an error  
-[23:57:44] [Warn] Warning! you are awesome.  
+[23:57:44] [Log] Esto es un log  
+[23:57:44] [Error] Esto es un error  
+[23:57:44] [Warn] Esto es una advertencia por tu nivel de belleza  
 
+<br><br>
 
+**Agregar configuración personalizada:** Todos los parametros de la configuración son opcionales.
 
-**Custom Console configuration**  
-All parameters are optional.
-```javascript
-console = new Captain.Console({
+```typescript
+console = new namiconsole.Console({
     "use_colors": true,
-    "debug": false,
-    "format": "§8[§d%time%§8] [%prefix%§8] §7%message%",
+    "format": "§8[§d%tiempo%§8] [%prefijo%§8] §7%mensaje%",
     "log_prefix": "§aLog",
-    "warn_prefix": "§eWarn",
+    "warn_prefix": "§eAdvertencia",
     "error_prefix": "§cError",
-    "info_prefix": "§bInfo",
+    "info_prefix": "§bInformacion",
     "debug_prefix": "§bDebug"
 });
 ```
 
+<br><br><br>
 
 
+### Colores
+**Colores en la consola directamente:** Puedes usar un color especifico usando los prefixes para los colores.
 
-### Colors
-**Colors in console**  
-Just do a console.log (); containing a string with color scapes.
-```javascript
-const Captain = require('captainjs');
-console = new Captain.Console();
+```typescript
+import { Console } from 'namiconsole';
+console = new Console();
 
-console.log("§dHello in Purple §aAnd goodbye in green");
+console.log("§dEsto es un texto en verde §ay verde claro");
 ```
 
-Colors:  
+<br>
+
+> Colores:  
 §0 = Black  
 §1 = Dark Blue  
 §2 = Dark Green  
@@ -73,67 +85,25 @@ Colors:
 §f = White  
 §r = Reset  
 
+<br><br>
 
+**Utilizando los colores usando los constantes:** Puedes utilizar los colores usando las constantes de la clase Colors.
 
-**Colors in console using the Enumerator**  
-You can concatenate a string to a color using the following enumerator.
-```javascript
-const Color = require("captainjs").Colors;
+```typescript
+import { Rojo } from "namiconsole";
 
-console.log(Color.Red + "Hello");
+console.log(Rojo + "Hola esto es un texto rojito");
 ```
 
+<br><br>
 
+### Comandos
+**Registra un comando:** Registra un comando usando el metodo registerCommand, el cual recibe dos parametros, el primero es el nombre del comando y el segundo es la función a ejecutar cuando se ejecute el comando.
 
+```typescript  
+import { Commander } from 'namiconsole';
 
-### Debugger
-**Normal debugger**  
-It shows in the console when the function is called, which in turn contains where it is called from and in which line of code.
-```javascript
-const Captain = require('captainjs');
-const Debug = new Captain.Debugger();
-
-Debug.call();
-```
-
-> Output:  
-Debug called from Object.<anonymous>(); || test.js:4:7
-  
-  
-
-**Debugger with message**  
-It shows a message in the console when the function is called, which in turn contains where it is called from and in which line of code.
-```javascript
-const Captain = require('captainjs');
-const Debug = new Captain.Debugger();
-
-Debug.call("This works?");
-```
-
-> Output:  
-This works? || test.js:4:7
-
-
-
-**Debugger with console object**
-```javascript
-const Captain = require('captainjs');
-console = new Captain.Console();
-
-console.debug();
-```
-> Output:  
-[23:57:44] [Debug] Debug called from Object.<anonymous>(); || test.js:5:9
-
-
-
-
-### Commands
-**Register a command**  
-Registers a function that will be executed when the specified command is written to the terminal.  
-```javascript
-const Captain = require('captainjs');
-const Commander = new Captain.Commander();
+const Commander = new Commander();
 
 Commander.registerCommand("hello", (args) => {
     console.log("Hello world");
@@ -142,20 +112,21 @@ Commander.registerCommand("hello", (args) => {
 Commander.fetch();
 ```
 
+<br><br>
 
 
-**Change the command input prefix**  
+
+**Cambia la input de los comandos**  
 change the text to be displayed when a command needs to be sent.  
 ```javascript
-Commander.setPrefix("Type a command here: ");
+Commander.setPrefix("Pon un comando: ");
 ```
 
+<br><br>
 
-
-**Handle unknown commands**  
-executes an action when trying to execute a non-existent command.  
+**Organiza los comandos desconocidos:** Manda un texto personalizado cuando el comando no se pueda encontrar.
 ```javascript
 Commander.onUnknownCommand((cmd) => {
-    console.error("Invalid Command: " + cmd);
+    console.error("El comando que tratas de buscar no existe, comando: " + cmd);
 })
 ```

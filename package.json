@@ -1,7 +1,7 @@
 {
-    "name": "captainjs",
+    "name": "namiconsole",
     "version": "1.0.4",
-    "description": "A toolkit for NodeJS which contains Debugger and Console Utilities.",
+    "description": "A fork of captainJS",
     "main": "./src/index.js",
     "scripts": {
         "test": "node ./test.js"
@@ -13,7 +13,7 @@
         "console",
         "colors"
     ],
-    "author": "sammwy",
+    "author": "sammwy and fluffyworkgroup",
     "license": "ISC",
     "repository": {
         "type": "git",
