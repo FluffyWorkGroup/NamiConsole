@@ -40,7 +40,7 @@ console.warn("Esto es un advertencia por tu nivel de belleza");
 **Agregar configuración personalizada:** Todos los parametros de la configuración son opcionales.
 
 ```typescript
-console = new namiconsole.Console({
+console = new Console({
     "use_colors": true,
     "format": "§8[§d%tiempo%§8] [%prefijo%§8] §7%mensaje%",
     "log_prefix": "§aLog",
@@ -116,10 +116,9 @@ Commander.fetch();
 
 
 
-**Cambia la input de los comandos**  
-change the text to be displayed when a command needs to be sent.  
-```javascript
-Commander.setPrefix("Pon un comando: ");
+**Cambia la input de los comandos**   Cambia el texto que es mostrado al ejecutar un comando.  
+```typescript
+setPrefix("Pon un comando: ");
 ```
 
 <br><br>
