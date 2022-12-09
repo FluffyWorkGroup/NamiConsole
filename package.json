@@ -22,5 +22,8 @@
     },
     "devDependencies": {
         "@types/node": "^18.11.12"
+    },
+    "dependencies": {
+        "np": "^7.6.2"
     }
 }
