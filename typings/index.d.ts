@@ -33,7 +33,7 @@ interface Console {
     debugLog(...args: any[]): void
     error(...args: any[]): void
     warn(...args: any[]): void
-    formatList()
+    formatList(type: keyof typeOf, list: any[]): string[]
     formatString(type: keyof typeOf, str: string, isFirst: boolean): string
     stripeColors(str: string): `${string}`
     colorizeString(str: string): `${string}\x1b[0m`
