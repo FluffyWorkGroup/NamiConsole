@@ -4,7 +4,7 @@
     "description": "A fork of captainJS",
     "main": "./src/index.js",
     "scripts": {
-        "test": "node-ts ./tests/test.ts"
+        "test": "ts-node ./tests/test.ts"
     },
     "typings": "./typings/index.d.ts",
     "keywords": [
