@@ -1,16 +1,7 @@
 // @ts-check
 
 
-export declare namespace NamiConsole {
-    export class Commander {
-        constructor()
-        setPrefix(prefix: string): void
-        registerCommand(name: string, callback: (args: string[]) => void): void
-        onUnknownCommand(callback: (cmd: string) => void): void
-        fetch(): void
-    }    
-}
-interface Console {
+export interface Console {
     original: typeof console
     config: config | {}
     def_config: {
