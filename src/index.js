@@ -1,7 +1,14 @@
 "use strict";
 
-exports.Console = require('./constructors/console');
-exports.Debugger = require('./constructors/debugger');
-exports.Commander = require('./constructors/commander');
+const Console = require('./constructors/console');
 
-exports.Color = require('./enumerators/Color');
+function NamiConsole(config) {
+    return new Console(config);
+}
+
+NamiConsole.Console = require('./constructors/console');
+NamiConsole.Commander = require('./constructors/commander');
+NamiConsole.Color = require('./enumerators/Color');
+
+module.exports = NamiConsole;
+

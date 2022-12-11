@@ -1,11 +1,9 @@
 const MessageType = require('../enumerators/Types');
 const Color = require("../enumerators/Color");
-
-const Debugger = require("./debugger");
+const path = require('path');
 
 class Console {
     constructor(config) {
-        this.debugger = new Debugger();
 
         this.original = console;
         this.config = config || {};
@@ -16,8 +14,6 @@ class Console {
         this.timeEnd = this.original.timeEnd;
         this.trace = this.original.trace;
         this.assert = this.original.assert;
-
-        this.debug = this.debugger.call;
     }
 
     getConfig(key) {
@@ -51,6 +47,22 @@ class Console {
     warn(...args) {
         args = this.formatList(MessageType.WARN, args);
         return this.original.warn(...args);
+    }
+
+    debug(text) {
+        let error = new Error();
+        let frame = error.stack.split("\n")[2];
+        let pathName = frame.split("(")[1].split(")")[0];
+        let fileName = path.basename(pathName).split(":")[0];
+        let line = pathName.split(fileName)[pathName.split(fileName).length - 1].replace(":", "");
+        let functionName = frame.split(" ")[5];
+
+        if (text == null) {
+            this.debugLog(`Debug called from ${functionName}(); §8|| §9${fileName}§c:${line}`)
+        } else {
+            this.debugLog(`${text} §8|| §9${fileName}§c:${line}`)
+        }
+
     }
 
     formatList(type, list) {

@@ -1,11 +1,12 @@
 {
-    "name": "namiconsole",
-    "version": "1.0.4",
+    "name": "nami-console",
+    "version": "1.1.1",
     "description": "A fork of captainJS",
     "main": "./src/index.js",
     "scripts": {
-        "test": "node ./test.js"
+        "test": "ts-node ./tests/test.ts"
     },
+    "typings": "./typings/index.d.ts",
     "keywords": [
         "debugger",
         "logger",
@@ -17,6 +18,12 @@
     "license": "ISC",
     "repository": {
         "type": "git",
-        "url": "https://github.com/sammwyy/captainjs.git"
+        "url": "https://github.com/FluffyWorkGroup/NamiConsole.git"
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.12"
+    },
+    "dependencies": {
+        "np": "^7.6.2"
     }
 }
