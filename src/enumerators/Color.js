@@ -18,11 +18,12 @@ const Enum = {
     White: "\x1b[1m\x1b[37m",
 
     Reset: "\x1b[0m",
-    Ofuscate: "",
-    Bold: "",
-    Strike: "",
-    Underline: "",
-    Italic: "",
+    Bold: "\x1b[1m",
+    Underline: "\x1b[4m",
+    Italic: "\x1b[3m",
+    Strike: "\x1b[9m",
+    Reverse: "\x1b[7m",
+    Hidden: "\x1b[8m",
 
 
     xReset: "\x1b[0m",

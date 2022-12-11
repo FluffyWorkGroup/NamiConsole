@@ -13,6 +13,8 @@ class Commander {
 
     setPrefix(text) {
         this.prefix = text;
+
+        return this;
     }
 
     fetch() {
@@ -20,6 +22,8 @@ class Commander {
             this.executeCommand(out);
             this.fetch();
         });
+
+        return this;
     }
 
     executeCommand(text) {

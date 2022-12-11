@@ -1473,6 +1473,13 @@ mute-stream@0.0.8:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
+nami-console@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/nami-console/-/nami-console-1.1.1.tgz#389c90468356be3413d8097967a700aaeb03f4b5"
+  integrity sha512-G3Q8YhcSM9f114GIJrDqxcA0V89DBe9oXFD4Tgh5IAeouXk8pbENYLErLW+t4898eOwZ5L5ulzKkNrhbFxGsQQ==
+  dependencies:
+    np "^7.6.2"
+
 new-github-release-url@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/new-github-release-url/-/new-github-release-url-1.0.0.tgz#493847e6fecce39c247e9d89929be773d2e7f777"
