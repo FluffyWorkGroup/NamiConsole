@@ -76,7 +76,7 @@ class Console {
     formatString(type, str, isFirst) {
         let format = this.getConfig("format");
         let use_colors = this.getConfig("use_colors");
-        let prefix = this.getConfig(type + "_prefix") || Color.DarkAqua + type + Color.Reset;
+        let prefix = this.getConfig(`prefixes`)[type + "_prefix"] || Color.DarkAqua + type + Color.Reset;
         let text = str;
 
         // Only apply the format to the first item in the array :D

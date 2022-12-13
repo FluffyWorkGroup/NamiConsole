@@ -17,22 +17,6 @@ const Enum = {
     Yellow: "\x1b[1m\x1b[33m",
     White: "\x1b[1m\x1b[37m",
 
-    Reset: "\x1b[0m",
-    Bold: "\x1b[1m",
-    Underline: "\x1b[4m",
-    Italic: "\x1b[3m",
-    Strike: "\x1b[9m",
-    Reverse: "\x1b[7m",
-    Hidden: "\x1b[8m",
-
-
-    xReset: "\x1b[0m",
-    xDim: "\x1b[2m",
-    xUnderscore: "\x1b[4m",
-    xBlink: "\x1b[5m",
-    xReverse: "\x1b[7m",
-    xHidden: "\x1b[8m",
-
     BgBlack: "\x1b[40m",
     BgRed: "\x1b[41m",
     BgGreen: "\x1b[42m",

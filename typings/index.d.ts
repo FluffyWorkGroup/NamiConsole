@@ -3,7 +3,8 @@ import { Interface } from "readline"
 
 declare function NamiConsole(...args: any[]): void; 
 declare namespace NamiConsole {
-
+    export const Colors: Color;
+    export const Formats: Formats;
     interface config {
         use_colors?: boolean
         debug?: boolean
@@ -119,6 +120,24 @@ export interface Color {
     BgMagenta: "\x1b[45m"
     BgCyan: "\x1b[46m"
     BgWhite: "\x1b[47m"
+}
+
+export interface Formats {
+    Reset: "\x1b[0m",
+    Bold: "\x1b[1m",
+    Underline: "\x1b[4m",
+    Italic: "\x1b[3m",
+    Strike: "\x1b[9m",
+    Reverse: "\x1b[7m",
+    Hidden: "\x1b[8m",
+
+
+    xReset: "\x1b[0m",
+    xDim: "\x1b[2m",
+    xUnderscore: "\x1b[4m",
+    xBlink: "\x1b[5m",
+    xReverse: "\x1b[7m",
+    xHidden: "\x1b[8m"
 }
 
 }

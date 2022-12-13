@@ -21,7 +21,7 @@ Captain.js es una herramienta enfocada en brindar funcionalidades de la consola 
 ### Funcionalidades de consola
 **Formateado de la consola:** Agrega formateado a la consolam dentro de las funciones de este paquete, como lo son los colores, los prefijos y el debugger.
 ```typescript
-import { Console } from 'namiconsole';
+import { Console } from 'nami-console';
 console = new Console();
 
 console.log("Esto es un log");
@@ -30,7 +30,7 @@ console.warn("Esto es un advertencia por tu nivel de belleza");
 ```
 <br>
 
-> Output:  
+> Resultado:  
 [23:57:44] [Log] Esto es un log  
 [23:57:44] [Error] Esto es un error  
 [23:57:44] [Warn] Esto es una advertencia por tu nivel de belleza  
@@ -43,11 +43,14 @@ console.warn("Esto es un advertencia por tu nivel de belleza");
 console = new Console({
     "use_colors": true,
     "format": "§8[§d%tiempo%§8] [%prefijo%§8] §7%mensaje%",
+    prefixes: {
     "log_prefix": "§aLog",
     "warn_prefix": "§eAdvertencia",
     "error_prefix": "§cError",
     "info_prefix": "§bInformacion",
     "debug_prefix": "§bDebug"
+    }
+    
 });
 ```
 
@@ -58,7 +61,7 @@ console = new Console({
 **Colores en la consola directamente:** Puedes usar un color especifico usando los prefixes para los colores.
 
 ```typescript
-import { Console } from 'namiconsole';
+import { Console } from 'nami-console';
 console = new Console();
 
 console.log("§dEsto es un texto en verde §ay verde claro");
@@ -90,18 +93,17 @@ console.log("§dEsto es un texto en verde §ay verde claro");
 **Utilizando los colores usando los constantes:** Puedes utilizar los colores usando las constantes de la clase Colors.
 
 ```typescript
-import { Rojo } from "namiconsole";
+import { Color } from "nami-console";
 
-console.log(Rojo + "Hola esto es un texto rojito");
+console.log(Color.Red + "Hola esto es un texto rojito");
 ```
-
 <br><br>
 
 ### Comandos
 **Registra un comando:** Registra un comando usando el metodo registerCommand, el cual recibe dos parametros, el primero es el nombre del comando y el segundo es la función a ejecutar cuando se ejecute el comando.
 
 ```typescript  
-import { Commander } from 'namiconsole';
+import { Commander } from 'nami-console';
 
 const Commander = new Commander();
 
