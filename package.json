@@ -24,7 +24,6 @@
         "@types/node": "^18.11.12"
     },
     "dependencies": {
-        "nami-console": "^2.0.0",
         "np": "^7.6.2"
     }
 }
