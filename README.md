@@ -2,6 +2,8 @@
 <div align="center">
 <img src="https://i.imgur.com/VV8QbET.png" />
 
+![npm](https://img.shields.io/npm/dw/nami-console?color=FF0000&label=Descargas%20mensuales&style=flat-square) ![GitHub package.json version](https://img.shields.io/github/package-json/v/FluffyWorkGroup/nami-console?style=flat-square)
+
 Un fork de [captainjs](https://github.com/sammwyy/captainjs) con algunas mejoras personalizadas pensadas para todo el branding de Nami al igual que con el trabajo de typescript, como lo pueden ser el uso de ecmascript y la eliminación completa de commonjs como espacio de trabajo.
 
 </div>
