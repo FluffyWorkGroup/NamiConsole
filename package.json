@@ -16,10 +16,6 @@
     ],
     "author": "sammwy and fluffyworkgroup",
     "license": "ISC",
-    "publishConfig": {
-        "access": "public",
-        "registry": "https://npm.pkg.github.com"
-    },
     "devDependencies": {
         "@types/node": "^18.11.12",
         "ts-node": "^10.9.1",
