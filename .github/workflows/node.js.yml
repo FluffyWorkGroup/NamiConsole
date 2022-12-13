@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "dev" ]
+    branches: [ "dev", "migration-to-ts" ]
   pull_request:
-    branches: [ "dev" ]
+    branches: [ "dev", "migration-to-ts" ]
 
 jobs:
   build:
@@ -25,5 +25,9 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-   - name: yarn --frozen-lockfile
-   - name: yarn test
+    - name: Instalar dependencias 
+    run: yarn install --frozen-lockfile
+    - name: Construir proyecto
+    run: yarn build --if-present
+    - name: Ejecutar tests
+    run: yarn test
