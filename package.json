@@ -1,5 +1,5 @@
 {
-    "name": "nami-console",
+    "name": "FluffyWorkGroup@nami-console",
     "version": "2.1.0",
     "description": "A fork of captainJS",
     "main": "./src/index.js",
