@@ -21,7 +21,8 @@
         "url": "https://github.com/FluffyWorkGroup/NamiConsole.git"
     },
     "devDependencies": {
-        "@types/node": "^18.11.12"
+        "@types/node": "^18.11.12",
+        "ts-node": "^10.9.1"
     },
     "dependencies": {
         "np": "^7.6.2"
